@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "status": "fixed before the first model evaluation",
+  "dataset": "shape-diagnostic-v1",
+  "gallery_size": 48,
+  "test_queries": 54,
+  "test_groups": 6,
+  "primary_metric": "ndcg@10",
+  "secondary_metrics": ["hit@1", "hit@5", "recall@10", "mrr", "map@10"],
+  "baseline": "single raw query, L2 normalization, exact cosine ranking",
+  "intervention": "mean of normalized raw / an image of / a photo of text embeddings, then renormalize",
+  "held_constant": ["gallery", "checkpoint", "preprocessing", "queries", "fp32 precision", "ranking method"],
+  "uncertainty": "2000 percentile bootstrap draws at color-shape group level, seed 42; paired deltas",
+  "hypotheses": [
+    "Attribute retrieval may be easier than retrieval requiring count and spatial relations.",
+    "Prompt ensembling may change results in either direction; improvement is not presumed."
+  ],
+  "decision_rule": "Report both directions of change. Do not select templates using test results.",
+  "limits": ["Only six independent test groups", "Synthetic images", "No claim of natural-image benchmark performance", "No new architecture claimed"],
+  "planned_optional_models": ["b32-laion", "b16-openai"]
+}
