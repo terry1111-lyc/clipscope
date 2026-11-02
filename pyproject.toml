@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clipscope"
+version = "0.1.0"
+description = "A reproducible CLIP retrieval laboratory: search, ablations, and failure analysis"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["numpy>=2.0,<3", "Pillow>=11,<14", "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "python-multipart>=0.0.20,<1"]
+
+[project.optional-dependencies]
+model = ["open_clip_torch==3.3.0", "torch>=2.6,<3", "torchvision>=0.21,<1"]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1"]
+plots = ["matplotlib>=3.9,<4"]
+
+[project.scripts]
+clipscope = "clipscope.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+clipscope = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["model: opt-in tests requiring pretrained model weights"]

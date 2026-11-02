@@ -1,0 +1,17 @@
+services:
+  clipscope:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      CLIPSCOPE_DEVICE: cpu
+      CLIPSCOPE_MODEL: b32-openai
+      CLIPSCOPE_API_TOKEN: ${CLIPSCOPE_API_TOKEN:-}
+    volumes:
+      - clip-data:/app/data
+      - clip-cache:/app/.cache
+    restart: unless-stopped
+    init: true
+volumes:
+  clip-data:
+  clip-cache:
