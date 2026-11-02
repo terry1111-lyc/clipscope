@@ -1,0 +1,27 @@
+name: quality
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: pip install -e '.[dev]'
+      - run: pytest -q
+      - run: python -m compileall -q src
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/clipscope/static/app.js
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t clipscope:ci .
+      - run: docker run --rm clipscope:ci clipscope --help
