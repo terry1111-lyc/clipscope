@@ -1,0 +1,5225 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-02T06:09:21.340706+00:00",
+  "git_commit": "uncommitted",
+  "source_sha256": "552823834f4482110e859bd95ea09e82ffb91554cbef1c322498811d45f90a32",
+  "dataset_sha256": "49908e47d9ba7610ee21d92912df157e8d99ba8a0c8601be28418013a52f77f1",
+  "queries_sha256": "0224515d9bf0cc800e7e7ec9824c5ca8b71ca5fa030c8f146802afad3744ea40",
+  "encoder": {
+    "backend": "open_clip",
+    "model": "b32-openai",
+    "architecture": "ViT-B-32",
+    "pretrained": "openai",
+    "open_clip": "3.3.0",
+    "precision": "fp32",
+    "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    MaybeConvertMode()\n    MaybeToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+    "weights_sha256": "a3ce3c4a2245ed2a572d2eb864a62f0a4ca62b3123b83f8a52a523c3b1dd32a4",
+    "quick_gelu": true
+  },
+  "encoder_fingerprint": "cd0937b4a0a6ea1b83fe69eab3628dd7cf9e388124a652c875e6016e3ea24a8c",
+  "device": "cpu",
+  "split": "test",
+  "direction": "image-to-text",
+  "seed": 42,
+  "ensemble": false,
+  "prompts": [
+    "{}"
+  ],
+  "count": 24,
+  "bootstrap_groups": 6,
+  "environment": {
+    "python": "3.14.7",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "numpy": "2.5.4",
+      "Pillow": "13.0.0",
+      "torch": "2.15.0",
+      "open_clip_torch": "3.3.0"
+    }
+  },
+  "latency_ms": {
+    "p50": 0.025395536795258522,
+    "p95": 0.05839550867676729,
+    "scope": "ranking only; image/caption embeddings cached"
+  },
+  "metrics": {
+    "hit@1": {
+      "mean": 0.3333333333333333,
+      "ci95": [
+        0.25,
+        0.4166666666666667
+      ]
+    },
+    "hit@5": {
+      "mean": 0.9583333333333334,
+      "ci95": [
+        0.875,
+        1.0
+      ]
+    },
+    "recall@10": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "mrr": {
+      "mean": 0.5753968253968254,
+      "ci95": [
+        0.5119047619047619,
+        0.642361111111111
+      ]
+    },
+    "map@10": {
+      "mean": 0.5753968253968254,
+      "ci95": [
+        0.5119047619047619,
+        0.642361111111111
+      ]
+    },
+    "ndcg@10": {
+      "mean": 0.6809007536273187,
+      "ci95": [
+        0.6322896425162076,
+        0.732400341485372
+      ]
+    }
+  },
+  "slices": {
+    "image-caption": {
+      "hit@1": {
+        "mean": 0.3333333333333333,
+        "ci95": [
+          0.25,
+          0.4166666666666667
+        ]
+      },
+      "hit@5": {
+        "mean": 0.9583333333333334,
+        "ci95": [
+          0.875,
+          1.0
+        ]
+      },
+      "recall@10": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "mrr": {
+        "mean": 0.5753968253968254,
+        "ci95": [
+          0.5119047619047619,
+          0.642361111111111
+        ]
+      },
+      "map@10": {
+        "mean": 0.5753968253968254,
+        "ci95": [
+          0.5119047619047619,
+          0.642361111111111
+        ]
+      },
+      "ndcg@10": {
+        "mean": 0.6809007536273187,
+        "ci95": [
+          0.6322896425162076,
+          0.732400341485372
+        ]
+      }
+    }
+  },
+  "queries": [
+    {
+      "id": "red-square-left-1-image-query",
+      "text": "one red square on the left side of a plain background",
+      "source_id": "red-square-left-1",
+      "group": "red-square",
+      "slice": "image-caption",
+      "relevant": [
+        "red-square-left-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 0.0,
+        "recall@10": 1.0,
+        "mrr": 0.14285714285714285,
+        "map@10": 0.14285714285714285,
+        "ndcg@10": 0.3333333333333333
+      },
+      "ranking": [
+        {
+          "id": "red-square-right-2",
+          "score": 0.3001503348350525
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.29664355516433716
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2892886996269226
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.28834572434425354
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.28598588705062866
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.28595077991485596
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2845684885978699
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2835332155227661
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.268882155418396
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.26873210072517395
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.26869064569473267
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.26827186346054077
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2677469253540039
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2673359513282776
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2668099105358124
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.26582658290863037
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.26569032669067383
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2652694880962372
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.26504239439964294
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2646936774253845
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.26442891359329224
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2639744281768799
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.2632794678211212
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.2632294297218323
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.26294711232185364
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.26160958409309387
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2614220976829529
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2602158784866333
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.255095511674881
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.25508591532707214
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.2532098591327667
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2531406283378601
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.25290873646736145
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.25230473279953003
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.25199881196022034
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.25197601318359375
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.25178104639053345
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2514461576938629
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.2499651461839676
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.24974864721298218
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.24945864081382751
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.24922002851963043
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.247812420129776
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.24471008777618408
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.24466244876384735
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.24363943934440613
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.22672605514526367
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.22529740631580353
+        }
+      ]
+    },
+    {
+      "id": "red-square-left-2-image-query",
+      "text": "two red squares on the left side of a plain background",
+      "source_id": "red-square-left-2",
+      "group": "red-square",
+      "slice": "image-caption",
+      "relevant": [
+        "red-square-left-2"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5,
+        "map@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      },
+      "ranking": [
+        {
+          "id": "red-square-right-2",
+          "score": 0.2985401451587677
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.294533908367157
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.28591006994247437
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2818969786167145
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2816905975341797
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2786009907722473
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.278438925743103
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2742469906806946
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2675033211708069
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2659703493118286
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2643386125564575
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2642834186553955
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.2627890706062317
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.26269668340682983
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2619432806968689
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2612781524658203
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2610251307487488
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2608049213886261
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2589956223964691
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2585824728012085
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.25825005769729614
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2580978274345398
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.2580454349517822
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2579690217971802
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2571832537651062
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2566092610359192
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2551160454750061
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.25460702180862427
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.25288626551628113
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2528129816055298
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2522599399089813
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2513021230697632
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.25094717741012573
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.25071167945861816
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.24978306889533997
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.24946308135986328
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.2488863468170166
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.24787402153015137
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2467542588710785
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.2465338408946991
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.24651668965816498
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.24532067775726318
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.24418094754219055
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.24396054446697235
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.24324440956115723
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.2426666021347046
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.2269122302532196
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.22580300271511078
+        }
+      ]
+    },
+    {
+      "id": "red-square-right-1-image-query",
+      "text": "one red square on the right side of a plain background",
+      "source_id": "red-square-right-1",
+      "group": "red-square",
+      "slice": "image-caption",
+      "relevant": [
+        "red-square-right-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.3333333333333333,
+        "map@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      },
+      "ranking": [
+        {
+          "id": "red-square-right-2",
+          "score": 0.3079332113265991
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.3043908476829529
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.29620054364204407
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2942718267440796
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.292171835899353
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2915579080581665
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.29070812463760376
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2890673279762268
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.27350616455078125
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2730354368686676
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2730286121368408
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2726151645183563
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2718173861503601
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.271595299243927
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2704120874404907
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.26988694071769714
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2697484791278839
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2696494460105896
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.26948124170303345
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.26914548873901367
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2684732675552368
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2677547037601471
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.26731231808662415
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.26696479320526123
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2659376561641693
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.26539602875709534
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2643020749092102
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.26407337188720703
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.2588326930999756
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2576899528503418
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.25641894340515137
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.25606033205986023
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.25503960251808167
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.2545575499534607
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.2543245553970337
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.25355973839759827
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.25242772698402405
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2523663640022278
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.25236615538597107
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2516031265258789
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.250303715467453
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2497863620519638
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.24947836995124817
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.24729092419147491
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.24418815970420837
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.24329371750354767
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.22641819715499878
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.224594384431839
+        }
+      ]
+    },
+    {
+      "id": "red-square-right-2-image-query",
+      "text": "two red squares on the right side of a plain background",
+      "source_id": "red-square-right-2",
+      "group": "red-square",
+      "slice": "image-caption",
+      "relevant": [
+        "red-square-right-2"
+      ],
+      "metrics": {
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "map@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ranking": [
+        {
+          "id": "red-square-right-2",
+          "score": 0.2989056706428528
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.29486289620399475
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2842315435409546
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2805901765823364
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2805556654930115
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2778102457523346
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2776564955711365
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2735791802406311
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2676304876804352
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.26610612869262695
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2655283808708191
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.263948917388916
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2638438940048218
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2637304663658142
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.26230454444885254
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.26193270087242126
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.26054278016090393
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.260170042514801
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2588309049606323
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2583290934562683
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2578273415565491
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.25775760412216187
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.2576744258403778
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.25744718313217163
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.25615036487579346
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.25528958439826965
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.25424590706825256
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.25391966104507446
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2535611689090729
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.25341540575027466
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.25290265679359436
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.2520331144332886
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.25096818804740906
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2508552074432373
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2501445710659027
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.24997785687446594
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.24861262738704681
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.24782735109329224
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.2476271688938141
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.2469208687543869
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.24522021412849426
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.24457955360412598
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.24374964833259583
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.24304954707622528
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.24297043681144714
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.24238580465316772
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.22585129737854004
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.2248886674642563
+        }
+      ]
+    },
+    {
+      "id": "blue-circle-left-1-image-query",
+      "text": "one blue circle on the left side of a plain background",
+      "source_id": "blue-circle-left-1",
+      "group": "blue-circle",
+      "slice": "image-caption",
+      "relevant": [
+        "blue-circle-left-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.25,
+        "map@10": 0.25,
+        "ndcg@10": 0.43067655807339306
+      },
+      "ranking": [
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.33464720845222473
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.3288901448249817
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.3183169662952423
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.31387755274772644
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.3090473711490631
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.3084728717803955
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.3059713840484619
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.3045840859413147
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.3013012409210205
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.30031922459602356
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2996944189071655
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.2991160750389099
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.2989087402820587
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2979193329811096
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.29679274559020996
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.2960398197174072
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.295075923204422
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.29247143864631653
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.29079222679138184
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2884765565395355
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.28456011414527893
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.28163275122642517
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2813637852668762
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.27915114164352417
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.27701088786125183
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2728753983974457
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.27241307497024536
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.27114832401275635
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.27086716890335083
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.27039793133735657
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.26973146200180054
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.26953738927841187
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2687419652938843
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.26589277386665344
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.26559197902679443
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.26516324281692505
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2651524245738983
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2651267647743225
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2633938491344452
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.26299184560775757
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.25761696696281433
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2576160132884979
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.25092190504074097
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2503873407840729
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.2502319812774658
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.249671071767807
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2494780719280243
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.24926690757274628
+        }
+      ]
+    },
+    {
+      "id": "blue-circle-left-2-image-query",
+      "text": "two blue circles on the left side of a plain background",
+      "source_id": "blue-circle-left-2",
+      "group": "blue-circle",
+      "slice": "image-caption",
+      "relevant": [
+        "blue-circle-left-2"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5,
+        "map@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      },
+      "ranking": [
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.32753661274909973
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.3219195604324341
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.30758461356163025
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.30344337224960327
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.30341511964797974
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.3014717698097229
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2986534833908081
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.29522591829299927
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2905591130256653
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.28934305906295776
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2891835570335388
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.2851313352584839
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.28489792346954346
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.2843784987926483
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.2842090129852295
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.28214389085769653
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.28198665380477905
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.28189146518707275
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2818187177181244
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.2785000801086426
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2754065692424774
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.27488797903060913
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.27304673194885254
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.27188125252723694
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.26382529735565186
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2627355456352234
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2622859477996826
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2588231563568115
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.25849640369415283
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.25792837142944336
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.2556939423084259
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2554696500301361
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.25501999258995056
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.25431689620018005
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.254153847694397
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.25320878624916077
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.25299572944641113
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2526322901248932
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.25192731618881226
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.25190648436546326
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2516210973262787
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2510489821434021
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.24689362943172455
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.24663257598876953
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.23962213099002838
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.23948606848716736
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.23682793974876404
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.23656797409057617
+        }
+      ]
+    },
+    {
+      "id": "blue-circle-right-1-image-query",
+      "text": "one blue circle on the right side of a plain background",
+      "source_id": "blue-circle-right-1",
+      "group": "blue-circle",
+      "slice": "image-caption",
+      "relevant": [
+        "blue-circle-right-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.3333333333333333,
+        "map@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      },
+      "ranking": [
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.33550775051116943
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.32999199628829956
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.3292637765407562
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.3251553475856781
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.31334754824638367
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.3128373324871063
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.3106272220611572
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.31005150079727173
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.3094731271266937
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.3067924678325653
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.3067348301410675
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.3054518699645996
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.30398598313331604
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.302998423576355
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.30287909507751465
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.30247044563293457
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.3003271520137787
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.3000127673149109
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.29986175894737244
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.29830315709114075
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.29731959104537964
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.29567161202430725
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2871021628379822
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.28533312678337097
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.284393846988678
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2841169238090515
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2816658020019531
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2816445827484131
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.280836820602417
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2803829610347748
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2763371765613556
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.27590370178222656
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.27484479546546936
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.27408668398857117
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.27343469858169556
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.27263060212135315
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2725173532962799
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2715517282485962
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.26334500312805176
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.26155534386634827
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2557171583175659
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2550954222679138
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.24681752920150757
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.24672436714172363
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.24561963975429535
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.2452068030834198
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.24514248967170715
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.24284563958644867
+        }
+      ]
+    },
+    {
+      "id": "blue-circle-right-2-image-query",
+      "text": "two blue circles on the right side of a plain background",
+      "source_id": "blue-circle-right-2",
+      "group": "blue-circle",
+      "slice": "image-caption",
+      "relevant": [
+        "blue-circle-right-2"
+      ],
+      "metrics": {
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "map@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ranking": [
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.3296927213668823
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.32372820377349854
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.307913601398468
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.30409061908721924
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.3035265803337097
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.30168092250823975
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2977901101112366
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.29397058486938477
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.29047584533691406
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.2891615629196167
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.288337767124176
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.28512340784072876
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.2841997444629669
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.2833299934864044
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2823933959007263
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.28232330083847046
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.28046947717666626
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.28005608916282654
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2799525856971741
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.2765544652938843
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2754708528518677
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2744372487068176
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.2723924517631531
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.27171194553375244
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2616671323776245
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2598270773887634
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.25927066802978516
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.25577032566070557
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.25528159737586975
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.25515350699424744
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.25136810541152954
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2511307895183563
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.25111672282218933
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.25090187788009644
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.25049617886543274
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.25004106760025024
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.249736487865448
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.24968107044696808
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2496764212846756
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.248705193400383
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2472914159297943
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.24623334407806396
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.24464157223701477
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.24404406547546387
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.235187828540802
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.23515628278255463
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.23155198991298676
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2313949167728424
+        }
+      ]
+    },
+    {
+      "id": "blue-triangle-left-1-image-query",
+      "text": "one blue triangle on the left side of a plain background",
+      "source_id": "blue-triangle-left-1",
+      "group": "blue-triangle",
+      "slice": "image-caption",
+      "relevant": [
+        "blue-triangle-left-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.25,
+        "map@10": 0.25,
+        "ndcg@10": 0.43067655807339306
+      },
+      "ranking": [
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.3331575393676758
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.3331330418586731
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.3276618719100952
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.32546958327293396
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.31309598684310913
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.30981603264808655
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.30958932638168335
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.3048718273639679
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.3036457300186157
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.3014712333679199
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.3003491163253784
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.29969388246536255
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2982436716556549
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2960149049758911
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.29525259137153625
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.29482585191726685
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.29411840438842773
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2935657799243927
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2925701141357422
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2913120985031128
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2780784070491791
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.27523794770240784
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2657291889190674
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.2635006904602051
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2627491354942322
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.26012253761291504
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.2596706748008728
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.2583737373352051
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2577340006828308
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2536708414554596
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.25319454073905945
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.25217247009277344
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2517176866531372
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.24872124195098877
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2447793334722519
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.24399086833000183
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2430187165737152
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.2422587126493454
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.24196484684944153
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.24005314707756042
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.2392410933971405
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2373860627412796
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.2348940670490265
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.23413918912410736
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.22974804043769836
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.22972159087657928
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.22531825304031372
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.224665567278862
+        }
+      ]
+    },
+    {
+      "id": "blue-triangle-left-2-image-query",
+      "text": "two blue triangles on the left side of a plain background",
+      "source_id": "blue-triangle-left-2",
+      "group": "blue-triangle",
+      "slice": "image-caption",
+      "relevant": [
+        "blue-triangle-left-2"
+      ],
+      "metrics": {
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "map@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ranking": [
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.3258906602859497
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.3245859742164612
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.3186766505241394
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.31710609793663025
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.30180323123931885
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.29996421933174133
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.29960891604423523
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2976815700531006
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2974010109901428
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.29429879784584045
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.29335373640060425
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2916799485683441
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.29124194383621216
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2879660725593567
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2875690460205078
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2860182821750641
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.28540629148483276
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2845844328403473
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.28248167037963867
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.28138232231140137
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.27412277460098267
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2725978493690491
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2611715495586395
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.2598225176334381
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.25702613592147827
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.25637364387512207
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.25444138050079346
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.25389617681503296
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2529129981994629
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.251932829618454
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.25074583292007446
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.24739231169223785
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.24667024612426758
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.24661438167095184
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.24638479948043823
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.24381622672080994
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.23672428727149963
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.23659448325634003
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.2314329594373703
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.23101696372032166
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.2306589037179947
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.23035775125026703
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.23029111325740814
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.23024199903011322
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.22574131190776825
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.2250857949256897
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2183367908000946
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.2179141342639923
+        }
+      ]
+    },
+    {
+      "id": "blue-triangle-right-1-image-query",
+      "text": "one blue triangle on the right side of a plain background",
+      "source_id": "blue-triangle-right-1",
+      "group": "blue-triangle",
+      "slice": "image-caption",
+      "relevant": [
+        "blue-triangle-right-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.3333333333333333,
+        "map@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      },
+      "ranking": [
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.3409000039100647
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.34021615982055664
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.33265575766563416
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.3311097025871277
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.3201283812522888
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.3170114755630493
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.3158103823661804
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.3114272356033325
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.30840253829956055
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.30810099840164185
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.3056110739707947
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.305508017539978
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.304368257522583
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.3043155372142792
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.30325716733932495
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2999100089073181
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2975945472717285
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.297552227973938
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.29700252413749695
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.29661715030670166
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.28384706377983093
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2812889814376831
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2692040205001831
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.26790034770965576
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.2675918936729431
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2664807438850403
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.26625797152519226
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.26414066553115845
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2637421190738678
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.26101821660995483
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2599547505378723
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2595457434654236
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2583651542663574
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.255282461643219
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2525418698787689
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.25214216113090515
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.24767565727233887
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.24684470891952515
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.24489615857601166
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.24307262897491455
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.24241439998149872
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2410593330860138
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.2391931712627411
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.23866933584213257
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.23353323340415955
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.23320065438747406
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.22826270759105682
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.22783774137496948
+        }
+      ]
+    },
+    {
+      "id": "blue-triangle-right-2-image-query",
+      "text": "two blue triangles on the right side of a plain background",
+      "source_id": "blue-triangle-right-2",
+      "group": "blue-triangle",
+      "slice": "image-caption",
+      "relevant": [
+        "blue-triangle-right-2"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5,
+        "map@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      },
+      "ranking": [
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.3240455985069275
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.3225884735584259
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.3186171352863312
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.31699228286743164
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.3022753894329071
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.3002933859825134
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.3001585602760315
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2982250154018402
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2963230311870575
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.2929254174232483
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2907998561859131
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2900829315185547
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.28780531883239746
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2872321605682373
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.28677141666412354
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2854501008987427
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.28380686044692993
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2829938530921936
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.28278493881225586
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.28176993131637573
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2751971185207367
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2736853063106537
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2633095979690552
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.2617892324924469
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.25656816363334656
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.25396278500556946
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.25359225273132324
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2532319724559784
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.25229862332344055
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2504154145717621
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2496030032634735
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.24582204222679138
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.24530524015426636
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.24517704546451569
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2438524067401886
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.24095436930656433
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.23795118927955627
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2379361391067505
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.23076096177101135
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.23076048493385315
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.23050065338611603
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.229622483253479
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.22950276732444763
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.22881251573562622
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.22766871750354767
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.22705389559268951
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.21933439373970032
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.21869176626205444
+        }
+      ]
+    },
+    {
+      "id": "green-square-left-1-image-query",
+      "text": "one green square on the left side of a plain background",
+      "source_id": "green-square-left-1",
+      "group": "green-square",
+      "slice": "image-caption",
+      "relevant": [
+        "green-square-left-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.25,
+        "map@10": 0.25,
+        "ndcg@10": 0.43067655807339306
+      },
+      "ranking": [
+        {
+          "id": "green-square-right-1",
+          "score": 0.314738005399704
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.3144976496696472
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.3135468065738678
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.3117780387401581
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.29618924856185913
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.29443103075027466
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.29377615451812744
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.29335877299308777
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.28872790932655334
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.2870005667209625
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.28674185276031494
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.28449395298957825
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2807525396347046
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2796264886856079
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2785171568393707
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2768683433532715
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2760624289512634
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.2746542692184448
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.27447351813316345
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2743258774280548
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2740653157234192
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.27358168363571167
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.27004435658454895
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.26781517267227173
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.26624196767807007
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2654030919075012
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.2653069496154785
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2646891474723816
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2646539509296417
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.26418739557266235
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2623541057109833
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2621379792690277
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.2606315612792969
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.26048576831817627
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.25932446122169495
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.25782135128974915
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2571054697036743
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.25649458169937134
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.25293436646461487
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.25225239992141724
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.25218039751052856
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.25036144256591797
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.24270278215408325
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.24225494265556335
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2390384078025818
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.23863467574119568
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.23372700810432434
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.23231948912143707
+        }
+      ]
+    },
+    {
+      "id": "green-square-left-2-image-query",
+      "text": "two green squares on the left side of a plain background",
+      "source_id": "green-square-left-2",
+      "group": "green-square",
+      "slice": "image-caption",
+      "relevant": [
+        "green-square-left-2"
+      ],
+      "metrics": {
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "map@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ranking": [
+        {
+          "id": "green-square-left-2",
+          "score": 0.29572632908821106
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2955082654953003
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.29196977615356445
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2886483371257782
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2782752811908722
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2781667411327362
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2771129608154297
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.27682292461395264
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.27570095658302307
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.2746979594230652
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.27339866757392883
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.27032315731048584
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2655601501464844
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.2638453245162964
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2627409100532532
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2612598240375519
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2608184814453125
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2607952952384949
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.26011398434638977
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2595067024230957
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.25936761498451233
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2582417130470276
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.255372017621994
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.25261566042900085
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2518432140350342
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.25167325139045715
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.25059911608695984
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.2504992187023163
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2503291666507721
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.24949344992637634
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.24801015853881836
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.24787497520446777
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.24645476043224335
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.24512457847595215
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.24500200152397156
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.24496325850486755
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.24483439326286316
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.24415874481201172
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.24403655529022217
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2439851462841034
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.2435341477394104
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.2406279593706131
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.23801326751708984
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.23711583018302917
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2314540296792984
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.2296171486377716
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.22362607717514038
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.2221391797065735
+        }
+      ]
+    },
+    {
+      "id": "green-square-right-1-image-query",
+      "text": "one green square on the right side of a plain background",
+      "source_id": "green-square-right-1",
+      "group": "green-square",
+      "slice": "image-caption",
+      "relevant": [
+        "green-square-right-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5,
+        "map@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      },
+      "ranking": [
+        {
+          "id": "green-square-right-2",
+          "score": 0.31617552042007446
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.3161025643348694
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.31443992257118225
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.31252413988113403
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2973443567752838
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.29635152220726013
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.29595741629600525
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.2944255471229553
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.28906571865081787
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.2888779640197754
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.2872743606567383
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2860768437385559
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.27894264459609985
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.278654009103775
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.27682140469551086
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2761465311050415
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.27528053522109985
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.2750476896762848
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2742187976837158
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2734653055667877
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.27300575375556946
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2729841470718384
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2726803719997406
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2700546383857727
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.26806217432022095
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.26683440804481506
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2667621374130249
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.26647230982780457
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2661339342594147
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.265988826751709
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2622182369232178
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2612544894218445
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.26079121232032776
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2597412168979645
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.25879502296447754
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.25878578424453735
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2559792399406433
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.25520408153533936
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.2526743710041046
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2526000142097473
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2515939772129059
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.2503212094306946
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.24507486820220947
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.24484539031982422
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.24124537408351898
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.24073050916194916
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.23340868949890137
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.23137272894382477
+        }
+      ]
+    },
+    {
+      "id": "green-square-right-2-image-query",
+      "text": "two green squares on the right side of a plain background",
+      "source_id": "green-square-right-2",
+      "group": "green-square",
+      "slice": "image-caption",
+      "relevant": [
+        "green-square-right-2"
+      ],
+      "metrics": {
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "map@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ranking": [
+        {
+          "id": "green-square-right-2",
+          "score": 0.29933619499206543
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.2978653311729431
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2952859103679657
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2911418676376343
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2840338945388794
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.28248006105422974
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.28239738941192627
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.279478520154953
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.27880915999412537
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.27732881903648376
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.27650579810142517
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2730400860309601
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2641229033470154
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.2617495656013489
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2606799602508545
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2592538893222809
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.258844256401062
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.25814762711524963
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.25700870156288147
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2568298876285553
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2564929127693176
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2559971511363983
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.25416168570518494
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.2535516917705536
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2532525956630707
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2530086040496826
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.25212720036506653
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.25169849395751953
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.2504434287548065
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.25032445788383484
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.247610405087471
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.2470753937959671
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.24644698202610016
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.24513356387615204
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2450515329837799
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.24453569948673248
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.24436134099960327
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.24429257214069366
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.24180546402931213
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.24068450927734375
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.24056124687194824
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.2373630255460739
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.23689983785152435
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2359982430934906
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.23075047135353088
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.22880084812641144
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.2220214158296585
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.22047457098960876
+        }
+      ]
+    },
+    {
+      "id": "yellow-circle-left-1-image-query",
+      "text": "one yellow circle on the left side of a plain background",
+      "source_id": "yellow-circle-left-1",
+      "group": "yellow-circle",
+      "slice": "image-caption",
+      "relevant": [
+        "yellow-circle-left-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.3333333333333333,
+        "map@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      },
+      "ranking": [
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.3090813159942627
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.3086049556732178
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.3035287857055664
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.3034669756889343
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.29835784435272217
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.29490596055984497
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2943516969680786
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2943243980407715
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2939840257167816
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2937471270561218
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.29166218638420105
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.2907510995864868
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.28282445669174194
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.28047484159469604
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.2784885764122009
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2760229706764221
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.2748997211456299
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2718638777732849
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2709164023399353
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2701273262500763
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2697259187698364
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2687745988368988
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.26832759380340576
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.26800256967544556
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.26663148403167725
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.2655852437019348
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.26464545726776123
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2643226087093353
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.2641017436981201
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2639813721179962
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.26382026076316833
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.26373735070228577
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.2623342275619507
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2620982825756073
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2618445158004761
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.26166874170303345
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2603626549243927
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.26024556159973145
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2595275044441223
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2586461901664734
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2585163712501526
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.25750303268432617
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2524954080581665
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.25099632143974304
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.24971584975719452
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.24895435571670532
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.2194475382566452
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.21703369915485382
+        }
+      ]
+    },
+    {
+      "id": "yellow-circle-left-2-image-query",
+      "text": "two yellow circles on the left side of a plain background",
+      "source_id": "yellow-circle-left-2",
+      "group": "yellow-circle",
+      "slice": "image-caption",
+      "relevant": [
+        "yellow-circle-left-2"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5,
+        "map@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      },
+      "ranking": [
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.31892699003219604
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.3126750588417053
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.3053246736526489
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.30003052949905396
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.29377442598342896
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2911093533039093
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.29085779190063477
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2864365875720978
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.28161466121673584
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.27955231070518494
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.27953410148620605
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2788649797439575
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.27569344639778137
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.27562546730041504
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.2747904360294342
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2725594937801361
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.27250024676322937
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.26984676718711853
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.26983898878097534
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.2695036232471466
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2675620913505554
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.26755771040916443
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2602265477180481
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2587948739528656
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.25803235173225403
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.25769463181495667
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.25680553913116455
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.25444456934928894
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2543140649795532
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2538435161113739
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2527649998664856
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.25204190611839294
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2514517605304718
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.2503781318664551
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.24930483102798462
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.24839460849761963
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.24766166508197784
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.24635851383209229
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.24507910013198853
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.24315334856510162
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2401551455259323
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.24004295468330383
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2382563352584839
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.23749837279319763
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.22984851896762848
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.22896480560302734
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.20937848091125488
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.20663398504257202
+        }
+      ]
+    },
+    {
+      "id": "yellow-circle-right-1-image-query",
+      "text": "one yellow circle on the right side of a plain background",
+      "source_id": "yellow-circle-right-1",
+      "group": "yellow-circle",
+      "slice": "image-caption",
+      "relevant": [
+        "yellow-circle-right-1"
+      ],
+      "metrics": {
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "map@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ranking": [
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.318132221698761
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.3126879632472992
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.3119347095489502
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.3066643476486206
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.3014288544654846
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.3010353446006775
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.2991901934146881
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.29707425832748413
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2956628203392029
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2938699722290039
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.2924656569957733
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.2903907895088196
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.28935521841049194
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.28785213828086853
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.28593480587005615
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.28220832347869873
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.27870973944664
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2751591205596924
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2745044231414795
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.27404099702835083
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2740359306335449
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2737586200237274
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.27206847071647644
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.2717936635017395
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.2713967263698578
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.27084821462631226
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2702144682407379
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.26946309208869934
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.26920053362846375
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.26912587881088257
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.2685953378677368
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2676921486854553
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2667689025402069
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2666785418987274
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.26602116227149963
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.26522499322891235
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.26442936062812805
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2626783847808838
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.25835496187210083
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2570193409919739
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.25624680519104004
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.25552594661712646
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.25203895568847656
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.2506980895996094
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.2496144026517868
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2492389678955078
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.22253228724002838
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.21935078501701355
+        }
+      ]
+    },
+    {
+      "id": "yellow-circle-right-2-image-query",
+      "text": "two yellow circles on the right side of a plain background",
+      "source_id": "yellow-circle-right-2",
+      "group": "yellow-circle",
+      "slice": "image-caption",
+      "relevant": [
+        "yellow-circle-right-2"
+      ],
+      "metrics": {
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "map@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ranking": [
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.3205415904521942
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.31382280588150024
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.30395859479904175
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.29798486828804016
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2973468005657196
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.29368096590042114
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2903199791908264
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.28490862250328064
+        },
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.28381669521331787
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.28139400482177734
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2811606824398041
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.2796132564544678
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.27895084023475647
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.27660879492759705
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.2751624882221222
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.2739170789718628
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2720028758049011
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.2709084153175354
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.2706320285797119
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.2702757716178894
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2682377099990845
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.2664165794849396
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.26319026947021484
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.26045769453048706
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2591862082481384
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.2572959065437317
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.2563953399658203
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.25473323464393616
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2544609606266022
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2539058327674866
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2530866265296936
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.2530374526977539
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.25294122099876404
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.25126218795776367
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.24959498643875122
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.2492394745349884
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.24756482243537903
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.24691173434257507
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.2461877018213272
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.24484971165657043
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.2448400855064392
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.24359238147735596
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2431914061307907
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.24179741740226746
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.23526498675346375
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.23329181969165802
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.21591731905937195
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.21295015513896942
+        }
+      ]
+    },
+    {
+      "id": "yellow-triangle-left-1-image-query",
+      "text": "one yellow triangle on the left side of a plain background",
+      "source_id": "yellow-triangle-left-1",
+      "group": "yellow-triangle",
+      "slice": "image-caption",
+      "relevant": [
+        "yellow-triangle-left-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.25,
+        "map@10": 0.25,
+        "ndcg@10": 0.43067655807339306
+      },
+      "ranking": [
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.3385652005672455
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.32977327704429626
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.32757997512817383
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.3251252770423889
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.29041796922683716
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.29036998748779297
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.28739652037620544
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.287020742893219
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.28660133481025696
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.28648650646209717
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.28394728899002075
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2834926247596741
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2829294204711914
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2827305793762207
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.2822868227958679
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2816169261932373
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.281208872795105
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2810705304145813
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.27913767099380493
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.2772998809814453
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2752210199832916
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.27055075764656067
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.26655256748199463
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.26166778802871704
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.25518763065338135
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2515866160392761
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.25074195861816406
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2478691041469574
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.24512988328933716
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.24247656762599945
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.23940452933311462
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.23737135529518127
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.23643401265144348
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.23583510518074036
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.23326459527015686
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2332075834274292
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.2316228747367859
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.22773073613643646
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.22636324167251587
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.2237466722726822
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.22099539637565613
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.2191692292690277
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.21663981676101685
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.21660901606082916
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.2161780595779419
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.21502800285816193
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.20924314856529236
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.20846758782863617
+        }
+      ]
+    },
+    {
+      "id": "yellow-triangle-left-2-image-query",
+      "text": "two yellow triangles on the left side of a plain background",
+      "source_id": "yellow-triangle-left-2",
+      "group": "yellow-triangle",
+      "slice": "image-caption",
+      "relevant": [
+        "yellow-triangle-left-2"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5,
+        "map@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      },
+      "ranking": [
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.32815808057785034
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.32092374563217163
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.3153361678123474
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.31286102533340454
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2855575680732727
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.28552520275115967
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.28396856784820557
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2830677628517151
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.281625896692276
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2810043692588806
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.27970612049102783
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.27850231528282166
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.27817147970199585
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.27682486176490784
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.27651673555374146
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.27537959814071655
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2748710513114929
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.27454644441604614
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.27371788024902344
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.27353644371032715
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2720295190811157
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.26956337690353394
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.2607288360595703
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.2565459609031677
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.25160521268844604
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.25073766708374023
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.24797269701957703
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2475641369819641
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.24728627502918243
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.2448851466178894
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2439088076353073
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.24061518907546997
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.2401450276374817
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.2388836145401001
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.23109984397888184
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.22824949026107788
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.22810250520706177
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2248610109090805
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.22453248500823975
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.22380484640598297
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.22333495318889618
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.2232365906238556
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.22230465710163116
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.22136768698692322
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.22130484879016876
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.21985459327697754
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.21221470832824707
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.21091912686824799
+        }
+      ]
+    },
+    {
+      "id": "yellow-triangle-right-1-image-query",
+      "text": "one yellow triangle on the right side of a plain background",
+      "source_id": "yellow-triangle-right-1",
+      "group": "yellow-triangle",
+      "slice": "image-caption",
+      "relevant": [
+        "yellow-triangle-right-1"
+      ],
+      "metrics": {
+        "hit@1": 0.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.3333333333333333,
+        "map@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      },
+      "ranking": [
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.3458501100540161
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.336478054523468
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.3307948410511017
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.3279244303703308
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2947636842727661
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.29359927773475647
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.2916099727153778
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.2909367084503174
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2908436059951782
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.29039233922958374
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.2878209054470062
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.28735461831092834
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.2868105173110962
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.28503143787384033
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2847243547439575
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.2836500108242035
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.28364086151123047
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.28319251537323
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.2818089723587036
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2816464900970459
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2775185704231262
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.2732519805431366
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.268547922372818
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.2633487582206726
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.25731587409973145
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.25398385524749756
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.25191551446914673
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.24957618117332458
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.2473696619272232
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.24465973675251007
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.24148118495941162
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.24085675179958344
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.23930557072162628
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.23659321665763855
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.23626384139060974
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.23358333110809326
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.23068377375602722
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.22844254970550537
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.22633269429206848
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.22547809779644012
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.22533747553825378
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.22346901893615723
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.21904213726520538
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.21727553009986877
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.21485061943531036
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.21441107988357544
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.20676371455192566
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.20600709319114685
+        }
+      ]
+    },
+    {
+      "id": "yellow-triangle-right-2-image-query",
+      "text": "two yellow triangles on the right side of a plain background",
+      "source_id": "yellow-triangle-right-2",
+      "group": "yellow-triangle",
+      "slice": "image-caption",
+      "relevant": [
+        "yellow-triangle-right-2"
+      ],
+      "metrics": {
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "map@10": 1.0,
+        "ndcg@10": 1.0
+      },
+      "ranking": [
+        {
+          "id": "yellow-triangle-right-2",
+          "score": 0.3310423493385315
+        },
+        {
+          "id": "yellow-triangle-left-2",
+          "score": 0.32306212186813354
+        },
+        {
+          "id": "yellow-triangle-right-1",
+          "score": 0.3186831474304199
+        },
+        {
+          "id": "yellow-triangle-left-1",
+          "score": 0.315895676612854
+        },
+        {
+          "id": "yellow-square-right-2",
+          "score": 0.2891474962234497
+        },
+        {
+          "id": "red-triangle-right-2",
+          "score": 0.2873139977455139
+        },
+        {
+          "id": "yellow-square-left-2",
+          "score": 0.28460797667503357
+        },
+        {
+          "id": "blue-triangle-right-1",
+          "score": 0.28449690341949463
+        },
+        {
+          "id": "red-triangle-left-2",
+          "score": 0.2842481732368469
+        },
+        {
+          "id": "yellow-square-right-1",
+          "score": 0.2837080657482147
+        },
+        {
+          "id": "blue-triangle-left-1",
+          "score": 0.28175947070121765
+        },
+        {
+          "id": "blue-triangle-right-2",
+          "score": 0.2798023521900177
+        },
+        {
+          "id": "yellow-circle-right-2",
+          "score": 0.2795366048812866
+        },
+        {
+          "id": "red-triangle-right-1",
+          "score": 0.2783941924571991
+        },
+        {
+          "id": "yellow-square-left-1",
+          "score": 0.2783438563346863
+        },
+        {
+          "id": "blue-triangle-left-2",
+          "score": 0.2778579294681549
+        },
+        {
+          "id": "green-triangle-right-1",
+          "score": 0.2770664691925049
+        },
+        {
+          "id": "red-triangle-left-1",
+          "score": 0.2767358720302582
+        },
+        {
+          "id": "green-triangle-left-1",
+          "score": 0.27545976638793945
+        },
+        {
+          "id": "yellow-circle-left-2",
+          "score": 0.27517008781433105
+        },
+        {
+          "id": "green-triangle-right-2",
+          "score": 0.27440738677978516
+        },
+        {
+          "id": "green-triangle-left-2",
+          "score": 0.2710908353328705
+        },
+        {
+          "id": "yellow-circle-right-1",
+          "score": 0.26210978627204895
+        },
+        {
+          "id": "yellow-circle-left-1",
+          "score": 0.25783583521842957
+        },
+        {
+          "id": "blue-square-right-1",
+          "score": 0.25302189588546753
+        },
+        {
+          "id": "blue-square-right-2",
+          "score": 0.25054460763931274
+        },
+        {
+          "id": "red-square-right-1",
+          "score": 0.2491465061903
+        },
+        {
+          "id": "red-square-right-2",
+          "score": 0.2488434612751007
+        },
+        {
+          "id": "blue-square-left-1",
+          "score": 0.24849118292331696
+        },
+        {
+          "id": "blue-square-left-2",
+          "score": 0.24794979393482208
+        },
+        {
+          "id": "red-square-left-2",
+          "score": 0.24615132808685303
+        },
+        {
+          "id": "red-square-left-1",
+          "score": 0.24511897563934326
+        },
+        {
+          "id": "blue-circle-right-2",
+          "score": 0.2391420155763626
+        },
+        {
+          "id": "blue-circle-left-2",
+          "score": 0.23753368854522705
+        },
+        {
+          "id": "green-square-right-1",
+          "score": 0.23336811363697052
+        },
+        {
+          "id": "green-square-left-1",
+          "score": 0.2297280728816986
+        },
+        {
+          "id": "blue-circle-right-1",
+          "score": 0.22922775149345398
+        },
+        {
+          "id": "green-square-right-2",
+          "score": 0.22794300317764282
+        },
+        {
+          "id": "blue-circle-left-1",
+          "score": 0.22620396316051483
+        },
+        {
+          "id": "green-square-left-2",
+          "score": 0.22569268941879272
+        },
+        {
+          "id": "green-circle-right-1",
+          "score": 0.22436469793319702
+        },
+        {
+          "id": "red-circle-right-2",
+          "score": 0.22262193262577057
+        },
+        {
+          "id": "green-circle-right-2",
+          "score": 0.22245386242866516
+        },
+        {
+          "id": "red-circle-left-2",
+          "score": 0.22236241400241852
+        },
+        {
+          "id": "green-circle-left-1",
+          "score": 0.22229985892772675
+        },
+        {
+          "id": "green-circle-left-2",
+          "score": 0.22115923464298248
+        },
+        {
+          "id": "red-circle-right-1",
+          "score": 0.2106887698173523
+        },
+        {
+          "id": "red-circle-left-1",
+          "score": 0.20943233370780945
+        }
+      ]
+    }
+  ]
+}
