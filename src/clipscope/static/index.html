@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CLIPScope · Retrieval Laboratory</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<header><a class="brand" href="/">◈ CLIPScope<span>RETRIEVAL LABORATORY</span></a><div class="connection"><span id="light"></span><span id="connection">正在连接模型…</span></div></header>
+<main>
+  <section class="intro"><div><p class="eyebrow">MULTIMODAL SYSTEMS / RESEARCH WORKBENCH</p><h1>Search beyond words.<br><em>Measure what matters.</em></h1><p class="subtitle">探索图文共享空间，用可复现实验理解模型的能力与边界。</p></div><div class="orbit" aria-hidden="true"><span class="orb a">image</span><div class="axis"></div><span class="orb b">text</span><small>SHARED EMBEDDING SPACE</small></div></section>
+  <div class="model-strip"><div><span>ENCODER</span><strong id="model">—</strong></div><div><span>DEVICE</span><strong id="device">—</strong></div><div><span>GALLERY</span><strong id="count">—</strong></div><div><span>RETRIEVAL</span><strong>Exact cosine</strong></div></div>
+  <nav aria-label="工作区"><button class="tab active" data-tab="search">01 / 检索实验室</button><button class="tab" data-tab="reports">02 / 实验记录</button><button class="tab" data-tab="notes">03 / 方法与边界</button></nav>
+  <section id="search" class="panel active">
+    <div class="workspace"><aside><p class="eyebrow">QUERY CONFIGURATION</p><h2>构造一次检索</h2><form id="query-form">
+      <label for="query">文本查询 <small>模型以英文输入为主</small></label><textarea id="query" maxlength="500" rows="3" placeholder="two red circles on the left side">two red circles on the left side</textarea>
+      <div class="chips"><button type="button" data-query="a blue triangle on the right side">Blue triangle ↗</button><button type="button" data-query="two yellow squares">Yellow squares</button></div>
+      <label for="upload" class="file-label">参考图片 <small>可选 · 不保存上传内容</small></label><input id="upload" type="file" accept="image/png,image/jpeg,image/webp"><button type="button" id="clear-image" class="text-button" hidden>移除图片</button>
+      <label for="alpha">文本权重 <output id="alpha-value">0.50</output></label><input id="alpha" type="range" min="0" max="1" step="0.05" value="0.5"><p class="help">有参考图时：归一化((1−α)·图向量 + α·文本向量)。只用图片时清空文本。</p>
+      <div class="option-row"><label for="k">结果数量</label><select id="k"><option>6</option><option selected>12</option><option>24</option></select></div>
+      <div class="option-row"><label for="ensemble">提示词集成 <small>仅文本检索</small></label><input id="ensemble" type="checkbox"></div>
+      <label for="diversity">结果多样性 <output id="diversity-value">0.00</output></label><input id="diversity" type="range" min="0" max="0.8" step="0.1" value="0"><p class="help">MMR 重新排序；可能降低相关性。图片检索不使用此项。</p>
+      <button class="primary" type="submit">检索共享空间 <span>↗</span></button><button type="button" id="compare" class="secondary">对比：原始查询 / 提示词集成</button>
+    </form><details class="auth"><summary>受保护部署：访问令牌</summary><input id="token" type="password" placeholder="API token（仅保存在当前页面内存）" autocomplete="off"><button id="connect" class="secondary">连接</button></details></aside>
+    <div class="results-area"><div class="section-heading"><div><p class="eyebrow">NEAREST NEIGHBOURS</p><h2 id="result-title">探索你的图库</h2></div><span id="latency" class="pill">READY</span></div><p id="message" role="status" aria-live="polite">输入描述或上传参考图片，开始一次真实模型检索。</p><div id="results" class="result-groups"></div><p class="footnote">分数为余弦相似度，不代表置信概率。图像标题只用于展示，不参与图像向量生成。</p></div></div>
+  </section>
+  <section id="reports" class="panel"><div class="section-heading"><div><p class="eyebrow">EVIDENCE, NOT ANECDOTES</p><h2>可复现的实验记录</h2></div><button id="refresh" class="secondary compact">刷新记录 ↻</button></div><p class="subtitle">展示服务器上的实际测量结果。95% 区间按查询组进行 bootstrap；小型合成实验不能外推到真实照片。</p><div id="report-list"></div></section>
+  <section id="notes" class="panel"><div class="notes-grid"><article><p class="eyebrow">01 / OBJECTIVE</p><h2>一个空间，两种模态</h2><p>CLIP 通过批内图文对比学习，让配对样本的余弦相似度高于不配对样本。检索使用 L2 归一化向量的点积。温度缩放会改变 softmax 分布，但不会改变同一查询的排序。</p><code>s(I, T) = f(I) · g(T) / (‖f(I)‖ ‖g(T)‖)</code></article><article><p class="eyebrow">02 / ABLATION</p><h2>提示词不是免费提升</h2><p>原始查询、an image of、a photo of 三种模板分别编码、归一化，再平均并重新归一化。模板可能改善表示，也可能给合成图或长句引入不匹配的上下文。应使用配对实验判断。</p></article><article><p class="eyebrow">03 / DIAGNOSTIC</p><h2>语义接近 ≠ 关系正确</h2><p>颜色和形状相同、数量或位置不同的图片构成难负例。检查前排错误结果能帮助区分属性识别与组合关系理解。该诊断集有 48 张图、108 条查询，开发与测试各 6 个颜色—形状组。</p></article><article><p class="eyebrow">04 / LIMITATIONS</p><h2>展示边界也是研究能力</h2><p>本项目不宣称新架构或 SOTA。默认模型偏英文，长文本会被截断；上传图本身在图库中时，以图搜图会出现自匹配。图到文评测延迟只计缓存向量的排序。上线多人服务前需配置认证、HTTPS 与限流。</p><a href="https://proceedings.mlr.press/v139/radford21a.html" target="_blank" rel="noopener">阅读 CLIP 原论文 ↗</a></article></div></section>
+</main><footer><span>CLIPScope / v0.1</span><span>Built for reproducible multimodal research.</span><a href="/docs">API reference ↗</a></footer><script src="/static/app.js" defer></script>
+</body></html>
